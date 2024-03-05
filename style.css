@@ -14,51 +14,172 @@ html, body {
 body {
     background: #333;
     display: flex;
+
+    h1 {
+        position: absolute;
+        top: 4%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 25px;
+    }
+}
+
+
+.second-try {
+    position: relative;
+    min-width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .sec-container {
+        display: flex;
+        height: 40px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .s-showcase {
+            height: 100%;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            font-weight: 600;
+
+            >div {
+                /* background-color: red; */
+                position: relative;
+                overflow: hidden;
+
+
+                span {
+                    position: absolute;
+                    left: 0;
+
+                    &:nth-child(1) {
+                        position: initial;
+                        opacity: 0;
+                    }
+
+                    &:nth-child(2) {
+                        top: 0;
+                    }
+
+                    &:nth-child(3) {
+                        top: 100%;
+                    }
+                }
+            }
+        }
+
+        .btn {
+            position: relative;
+            height: 100%;
+            width: 40px;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: lightseagreen;
+            cursor: pointer;
+
+            --height: 60%;
+            --width: 2px;
+        }
+
+        .btn::before {
+            content: "";
+            height: var(--height);
+            width: var(--width);
+            background-color: white;
+        }
+        .btn::after {
+            content: "";
+            position: absolute;
+            height: var(--width);
+            width: var(--height);
+            background-color: white;
+        }
+        
+        .btn:hover {
+            background-color: rgb(35, 205, 197);
+
+            &::after,
+            &::before {
+                background-color: #333;
+            }
+        }
+        
+        .btn:active {
+            
+            &::after,
+            &::before {
+                scale: .9;
+            }
+        }
+
+        .i-btn {
+        }
+        
+        .d-btn {
+
+            &::before {display: none;}
+        }
+    }
+}
+
+
+
+
+
+.first-try {
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
+    height: 100%;
 
-    
-}
-
-.showcase {
-    min-width: 100px;
-    height: 40px;
-    background: #555;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: width .5s ease-in-out;
-    overflow: hidden;
-}
-
-.modifier {
-    width: 30%;
-    display: flex;
-    border-radius: 5px;
-    overflow: hidden;
-
-    input {
-        flex: 1;
-        background: #222;
+    .showcase {
+        min-width: 100px;
+        height: 40px;
+        background: #555;
         padding: 10px 20px;
-        border: 1px solid black;
-        color: white;
-        font-weight: 600;
-        outline: none;
+        margin-bottom: 10px;
         border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: width .5s ease-in-out;
+        overflow: hidden;
     }
-
-    button {
-        background: #444;
-        color: white;
-        cursor: pointer;
-        height: 100%;
-        border: none;
-        outline: none;
-        padding: 10px 20px;2
+    
+    .modifier {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+    
+        input {
+            background: #222;
+            padding: 10px 20px;
+            border: 1px solid black;
+            color: white;
+            font-weight: 600;
+            outline: none;
+            border-radius: 3px;
+        }
+    
+        button {
+            background: #444;
+            color: white;
+            cursor: pointer;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+        }
     }
 }
